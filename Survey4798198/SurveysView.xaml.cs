@@ -6,4 +6,9 @@ public partial class SurveysView : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private async void AddSurveyButton_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SurveyDetailsView());
+    }
 }

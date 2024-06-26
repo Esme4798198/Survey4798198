@@ -4,9 +4,13 @@
              x:Class="Survey4798198.SurveysView"
              Title="SurveysView">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Text="+" Clicked="AddSurveyButton_Clicked"/>
+            <StackLayout Grid.Row="1" x:Name="SurveysPanel"/>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
