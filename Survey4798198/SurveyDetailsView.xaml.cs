@@ -27,8 +27,27 @@ public partial class SurveyDetailsView : ContentPage
         }
     }
 
-    private void Button_Clicked_1(object sender, EventArgs e)
+    private async void Button_Clicked_1(object sender, EventArgs e)
     {
 
+        //Evaluamos si los datos estan completos
+        if (string.IsNullOrWhiteSpace(NameEntry.Text) || string.IsNullOrWhiteSpace(FavoriteTeamLabel.Text))
+        {
+            return;
+        }
+        //Creamo l nuevo objeto de tipoSurvey
+        var newSurvey = new Surveys()
+        {
+            Name = NameEntry.Text,
+            Birthdate = BirthdatePicker.Date,
+            FavoriteTeam = FavoriteTeamLabel.Text
+        };
+        //Publicamos el mensjae con el objeto de encuesta como argumento
+
+        MessagingCenter.Send((ContentPage)this,
+        Messages.NewSurveyComplete, newSurvey);
+
+        await Navigation.PopAsync();    
     }
+
 }

@@ -9,7 +9,7 @@ namespace Survey4798198
     public class Surveys
     {
         public string Name { get; set; }
-        public string Birthdate { get; set; }
+        public DateTime Birthdate { get; set; }
         public string FavoriteTeam { get; set; }
         public override string ToString()
         {
