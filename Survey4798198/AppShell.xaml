@@ -8,8 +8,8 @@
     Title="Survey4798198">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:SurveysView}"
-        Route="MainPage" />
+        Title="SurveyView"
+        ContentTemplate="{DataTemplate local:SurveyDetailsView}"
+        Route="SurversView"/>
 
 </Shell>
